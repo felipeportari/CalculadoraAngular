@@ -1,1 +1,26 @@
-<p>calculadora works!</p>
+<form class="d-flex flex-column gap-4" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+
+    <div class="mb-3">
+        <label class="form-label">X</label>
+        <input type="number" name="numA" ngModel class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Y</label>
+        <input type="number" name="numB" ngModel class="form-control">
+    </div>
+
+    <div>
+        <label for="basic-url" class="form-label">Operação</label>
+        <select name="operator" ngModel class="form-select">
+            <option value="+" selected>Somar</option>
+            <option value="-">Subtrair</option>
+            <option value="*">Multiplicar</option>
+            <option value="/">Dividir</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Calcular</button>
+
+    <h1>{{ result }}</h1>
+</form>
